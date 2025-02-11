@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Nest</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #1e1e1e; color: #fff; text-align: center; }
+        header { background: #ff5722; padding: 20px; font-size: 24px; font-weight: bold; }
+        nav { display: flex; justify-content: center; background: #333; padding: 10px; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-size: 18px; transition: transform 0.3s ease-in-out, background 0.3s ease-in-out; padding: 10px; border-radius: 5px; }
+        nav a:hover { transform: scale(1.1); background: #ff5722; }
+        section { padding: 50px; }
+        .services { display: flex; flex-direction: column; align-items: center; }
+        .service-item { background: #333; padding: 15px; margin: 10px; border-radius: 10px; width: 60%; text-align: left; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease-in-out; }
+        .service-item:hover { transform: scale(1.05); background: #444; }
+        .animate { animation: fadeIn 2s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let links = document.querySelectorAll("nav a");
+            links.forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    let sectionId = this.getAttribute("href").substring(1);
+                    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="animate">Welcome to Neonest - Graphic Design</header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <section id="home" class="animate">
+        <h1>High-Quality Graphic Designs</h1>
+        <p>We bring your ideas to life with stunning visuals.</p>
+    </section>
+    
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-item">
+            <h3>Logo Design</h3>
+            <p>Professional and custom-made logos tailored to your brand identity.</p>
+            <p><strong>Price: $50</strong></p>
+        </div>
+        <div class="service-item">
+            <h3>Image Editing</h3>
+            <p>Enhance and retouch your images with expert-level editing.</p>
+            <p><strong>Price: $30</strong></p>
+        </div>
+        <div class="service-item">
+            <h3>Flyer Design</h3>
+            <p>Creative flyer designs to promote your business or event.</p>
+            <p><strong>Price: $40</strong></p>
+        </div>
+        <div class="service-item">
+            <h3>Presentation Designing</h3>
+            <p>Visually appealing and professional presentations.</p>
+            <p><strong>Price: $3.5 per slide</strong></p>
+        </div>
+        <div class="service-item">
+            <h3>Website Designing</h3>
+            <p>Modern and responsive website designs for businesses.</p>
+            <p><strong>Price: $3.5 per page</strong></p>
+        </div>
+    </section>
+
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: neonest22@gmail.com</p>
+    </section>
+</body>
+</html>
